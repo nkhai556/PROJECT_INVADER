@@ -96,7 +96,7 @@ public class Player {
             TempBullet = b.get(i);
             TempBullet.draw(g);
         }
-        g.drawRect(Player.hurtbox.x, Player.hurtbox.y, width/4, height/4);
+        
     }
 
 
