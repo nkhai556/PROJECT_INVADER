@@ -17,7 +17,7 @@ public class Texture {
             E_GRUNT = ImageIO.read(getClass().getResourceAsStream("/RES/Sprite/Wisp.png"));
             E_STRONG = ImageIO.read(getClass().getResourceAsStream("/RES/Sprite/Umbrella.png"));
             E_SNIPER = ImageIO.read(getClass().getResourceAsStream("/RES/Sprite/Lantern.png"));
-            E_SUMMONER = ImageIO.read(getClass().getResourceAsStream("/RES/Sprite/Strong.png"));
+            E_SUMMONER = ImageIO.read(getClass().getResourceAsStream("/RES/Sprite/GhostChild.png"));
             BG        = ImageIO.read(getClass().getResourceAsStream("/RES/Sprite/BG.png"));
             P_BULLET = ImageIO.read(getClass().getResourceAsStream("/RES/Sprite/Windblade.png"));
             E_BULLET1 = ImageIO.read(getClass().getResourceAsStream("/RES/Sprite/GhastFlame.png"));
