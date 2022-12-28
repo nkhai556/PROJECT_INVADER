@@ -38,6 +38,6 @@ public class BG {
         
         g.drawImage(BG1, x1, y1, width, height,null);
         g.drawImage(BG2, x2, y2, width, height,null);
-        g.drawRect( x1, y1,5,5);
+        
     }
 }
