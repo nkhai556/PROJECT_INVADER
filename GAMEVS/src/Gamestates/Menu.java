@@ -1,16 +1,29 @@
 package Gamestates;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Panel;
+
+import java.awt.*;
+import Game.Panel;
+
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
-import java.awt.Rectangle;
-import java.awt.Graphics2D;
+
 public class Menu implements Statemethod {
 
-    public Rectangle playButton = new Rectangle(Panel.WIDTH/2+120,150,100,50);
-    public Rectangle quitButton = new Rectangle(Panel.WIDTH/2+120,250,100,50);
+    private Panel panel;
+    public Rectangle playButton;
+    public Rectangle quitButton;
+    private Font menuFont;
+    private Font buttonFont;
+    
+
+    public Menu (Panel panel2){
+        this.panel = panel2;
+        playButton = new Rectangle(panel.returnWidth()/2 - panel.returnWidth()/8 ,150,100,50);
+        quitButton = new Rectangle(panel.returnWidth()/2 - panel.returnWidth()/8,250,100,50);
+        menuFont = new Font("Serif", Font.BOLD, 40);
+        buttonFont = new Font ("Serif", Font.BOLD, 30);
+    }
+    
     @Override
     public void update() {
         // TODO Auto-generated method stub
@@ -22,12 +35,14 @@ public class Menu implements Statemethod {
 
         // TODO Auto-generated method stub
         Graphics2D g2d = (Graphics2D) g;
+        g.setFont(menuFont);
         g.setColor(Color.WHITE);
-        g.drawString("GAME", Panel.WIDTH/2, 100);
+        g.drawString("Yokai Hunt", panel.getWidth()/4 + panel.getWidth()/12, 100);
+        g.setFont(buttonFont);
         g2d.draw(playButton);
-        g.drawString("Play", playButton.x+20, playButton.y+20);
+        g.drawString("Play", playButton.x +20, playButton.y+30);
         g2d.draw(quitButton);
-        g.drawString("Quit", quitButton.x+20, quitButton.y+20);
+        g.drawString("Quit", quitButton.x +20, quitButton.y+30);
         
     }
 

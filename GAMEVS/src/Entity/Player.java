@@ -141,7 +141,7 @@ public class Player {
         if(HP==0){
             System.out.println("You are dead!");
             System.out.print("You've survived for: "+ Panel.getSecond()+" seconds!\n");
-            Panel.stopTimer();
+            //Panel.stopTimer();
             Game.stopGameLoop();
             
 

@@ -8,13 +8,8 @@ import javax.swing.*;
 import Input.KeyManager;
 import Input.MouseManager;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import Gamestates.Gamestate;
 import Gamestates.Menu;
-import Gamestates.MouseInput;
-import Gamestates.Gamestate.*;
 
 
 public class Panel extends JPanel {
@@ -29,24 +24,22 @@ public class Panel extends JPanel {
     private Player player;
     private BG bg;
     private EnemyManager spawn;
+    private int tick = 0;
 
     static Timer timer;
     static int second=0;
     JLabel l1;
     
     public Panel() {
-        Key = new KeyManager(this);
+        Key = new KeyManager();
         this.addKeyListener(Key);
         this.addMouseListener(new MouseManager(this));
         setPanelSize();
         this.setFocusable(true);
         
         new Texture();
-        write();
-        simpleTimer();
-        timer.start();
 
-        menu = new Menu();
+        this.menu = new Menu(this);
         this.bg = new BG(this);
         this.spawn = new EnemyManager(this);
         this.player = new Player(this, Key, spawn);
@@ -61,16 +54,21 @@ public class Panel extends JPanel {
         this.setMinimumSize(size);
         this.setPreferredSize(size);
         this.setMaximumSize(size);
-        this.setBackground(Color.gray);
+        this.setBackground(new Color(48, 97, 181));
 
     }
 
     public void update() {
 
         if(Gamestate.state == Gamestate.PLAYING){
+            tick ++;
             bg.update();
             spawn.update();
             player.update();
+            if (tick >= 60){
+                second ++;
+                tick =0;
+            }
         }
     }
 
@@ -92,34 +90,16 @@ public class Panel extends JPanel {
         return tilesize;
     }
 
-
-    public static void stopTimer(){
-        timer.stop();
+    public int returnWidth(){
+        return this.width;
     }
 
-    public void simpleTimer(){
-        timer = new Timer(1000,new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e){
-                
-                    second++;
-                
-                
-                l1.setText(""+ second);
-                
-            }
-        });
-    };
+    public int returnHeight(){
+        return this.height;
+    }
+
+ 
     
-    private void write(){
-
-        l1= new JLabel("");
-        l1.setBounds(500,600,300,400);
-        this.add(l1);
-    }
-
-
-
     public static int getSecond() {
         return second;
     }

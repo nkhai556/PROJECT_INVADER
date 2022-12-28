@@ -20,7 +20,7 @@ public class E_Basic extends Enemy implements Villians {
     public E_Basic(int x, int y, int limit) {
         super.x = x;
         super.y = y;
-        super.HP = 3;
+        super.HP = 4;
         this.sprite = getE_BASIC();
         super.hurtbox = new Rectangle(x,y, width, height);
         super.limit = limit;

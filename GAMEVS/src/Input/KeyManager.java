@@ -9,10 +9,7 @@ import Game.Panel;
 public class KeyManager implements KeyListener {
 
     public boolean upPressed, downPressed, leftPressed, rightPressed, shootPressed;
-    private Panel panel;
-
-    public KeyManager(Panel panel) {
-        this.panel = panel;
+    public KeyManager() {
     }
 
     @Override

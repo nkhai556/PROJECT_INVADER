@@ -17,7 +17,7 @@ public class E_Strong extends Enemy implements Villians{
     public E_Strong(int x, int y) {
         super.x = x;
         super.y = y;
-        super.HP = 7;
+        super.HP = 8;
         this.sprite = getE_STRONG();
         super.hurtbox = new Rectangle(x,y,width,height);
         super.bullets = new LinkedList<>();

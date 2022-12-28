@@ -22,7 +22,7 @@ public class E_Sniper extends Enemy implements Villians {
     public E_Sniper(int x, int y, int limit, Player player) {
         super.x = x;
         super.y = y;
-        super.HP = 3;
+        super.HP = 5;
         this.sprite = getE_SNIPER();
         super.hurtbox = new Rectangle(x,y,width,height);
         super.limit = limit;

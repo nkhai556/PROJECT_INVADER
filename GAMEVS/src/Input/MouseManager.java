@@ -18,13 +18,13 @@ public class MouseManager implements MouseListener {
 	       // TODO Auto-generated method stub
 		   int mx = e.getX();
 		   int my = e.getY();
-		   if(mx>= Panel.WIDTH /2 +120 && mx <= Panel.WIDTH /2 +220){
+		   if(mx>= panel.returnWidth()/2 - panel.returnWidth()/8  && mx <= panel.returnWidth()+100){
 			   //new Rectangle(Panel.WIDTH/2+120,150,100,50);
 			   if(my >= 150  &&  my<=200){
 				   Gamestate.state = Gamestate.PLAYING;
 			   }
 		   }
-		   if(mx>= Panel.WIDTH /2 +120 && mx <= Panel.WIDTH /2 +220){
+		   if(mx>= panel.returnWidth()/2 - panel.returnWidth()/8 && mx <= panel.returnWidth() + 100){
 			//new Rectangle(Panel.WIDTH/2+120,150,100,50);
 			if(my >= 250  &&  my<=300){
 				System.exit(1);
