@@ -1,11 +1,14 @@
 package Game;
+
+import javax.swing.JLabel;
+
 public class Game implements Runnable {
 	
 	private Panel panel;
-	private Thread gameThread;
+	private static Thread gameThread;
 	private final int FPS_SET = 60;
 	private int frames = 0;
-    
+    JLabel counterLabel;
 	public Game () {
 		panel = new Panel();
 		
@@ -18,7 +21,9 @@ public class Game implements Runnable {
 		gameThread = new Thread(this);
 		gameThread.start();
 	}
-
+    public static void stopGameLoop(){
+        gameThread.stop();
+    }
         @Override
 	public void run() {
             double drawInterval = 1000000000/FPS_SET;

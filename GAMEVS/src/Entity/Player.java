@@ -3,6 +3,7 @@ package Entity;
 
 import Game.CollisionChecker;
 import Game.EnemyManager;
+import Game.Game;
 import Game.Panel;
 
 import static Game.Panel.getTilesize;
@@ -133,7 +134,18 @@ public class Player {
     //Reduce HP when hit
     public static void Damaged() {
         HP--;
-        System.out.println(HP + " HP left");
+        if(HP>=0){
+            System.out.println(HP + " HP left");
+        }
+
+        if(HP==0){
+            System.out.println("You are dead!");
+            System.out.print("You've survived for: "+ Panel.getSecond()+" seconds!\n");
+            Panel.stopTimer();
+            Game.stopGameLoop();
+            
+
+        }
     }
 
     //remove bullet out of list to make it disappear
