@@ -23,7 +23,7 @@ public class EnemyManager {
     }
 
     public void update() {
-        if (rand.nextInt((250 - 0) + 1) + 0 <= 2) {
+        if (rand.nextInt((100 - 0) + 1) + 0 <= 2) {
             addEnemies();
 
         }
@@ -70,6 +70,12 @@ public class EnemyManager {
     }
     public void setPlayerInfo(Player player){
         this.player = player;
+    }
+    public void resetEnemy(){
+        while (enemies.size()>0) {
+            tempEnemy = enemies.get(0);
+            removeEnemies(tempEnemy);    
+        }
     }
 }
 

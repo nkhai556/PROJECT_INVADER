@@ -14,11 +14,12 @@ public class GameOver implements Statemethod {
     private Font timeFont;
     private Panel panel;
     private int time;
-
+    public Rectangle retryButton;
     public GameOver (Panel panel2){
         this.panel = panel2;
         this.titleFont = new Font("Serif", Font.BOLD, 40);
         this.timeFont = new Font("Serif", Font.BOLD, 20);
+        retryButton = new Rectangle(panel.returnWidth()/2 - panel.returnWidth()/8 ,150,100,50);
         
     }
 
@@ -31,12 +32,14 @@ public class GameOver implements Statemethod {
     @Override
     public void draw(Graphics g) {
         this.time = Panel.getSecond();
+        Graphics2D g2d = (Graphics2D) g;
         g.setColor(Color.WHITE);
         g.setFont(titleFont);
         g.drawString("YOU HAD FALLEN", panel.returnWidth()/2 - panel.returnWidth()/3, panel.returnHeight()/2 -20);
         g.setFont(timeFont);
         g.drawString(String.format("You've survived for %d seconds...", time), panel.returnWidth()/4, panel.returnHeight()/2 + 20);
-        
+        g2d.draw(retryButton);
+        g.drawString("Retry", retryButton.x +20, retryButton.y+30);
     }
 
     @Override
