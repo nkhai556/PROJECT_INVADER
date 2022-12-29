@@ -5,6 +5,7 @@ import Game.CollisionChecker;
 import Game.EnemyManager;
 import Game.Game;
 import Game.Panel;
+import Gamestates.Gamestate;
 
 import static Game.Panel.getTilesize;
 import static Game.Texture.*;
@@ -141,8 +142,8 @@ public class Player {
         if(HP==0){
             System.out.println("You are dead!");
             System.out.print("You've survived for: "+ Panel.getSecond()+" seconds!\n");
-            //Panel.stopTimer();
-            Game.stopGameLoop();
+            Gamestate.state = Gamestate.DEAD;
+            //Game.stopGameLoop();
             
 
         }

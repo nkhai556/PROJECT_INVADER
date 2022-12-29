@@ -1,11 +1,13 @@
 package Gamestates;
 
-import java.awt.Panel;
+import java.awt.*;
 import java.awt.event.MouseEvent;
 
 import javax.swing.event.MouseInputListener;
 
 public class MouseInput implements MouseInputListener {
+
+    private Font titleFont;
 
     @Override
     public void mouseClicked(MouseEvent e) {

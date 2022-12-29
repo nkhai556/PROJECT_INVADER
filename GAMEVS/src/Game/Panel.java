@@ -7,8 +7,8 @@ import javax.swing.*;
 
 import Input.KeyManager;
 import Input.MouseManager;
-
 import Gamestates.Gamestate;
+import Gamestates.GameOver;
 import Gamestates.Menu;
 
 
@@ -20,15 +20,14 @@ public class Panel extends JPanel {
     KeyManager Key;
     int xdel = 0;
     int ydel = 0;
+
+    private GameOver over;
     private Menu menu;
     private Player player;
     private BG bg;
     private EnemyManager spawn;
     private int tick = 0;
-
-    static Timer timer;
     static int second=0;
-    JLabel l1;
     
     public Panel() {
         Key = new KeyManager();
@@ -39,6 +38,7 @@ public class Panel extends JPanel {
         
         new Texture();
 
+        this.over = new GameOver(this);
         this.menu = new Menu(this);
         this.bg = new BG(this);
         this.spawn = new EnemyManager(this);
@@ -70,6 +70,7 @@ public class Panel extends JPanel {
                 tick =0;
             }
         }
+        
     }
 
     @Override
@@ -79,10 +80,14 @@ public class Panel extends JPanel {
             bg.render(g);
             spawn.render(g);
             player.render(g);
-        }else if (Gamestate.state == Gamestate.MENU ){
+        }
+        else if (Gamestate.state == Gamestate.MENU ){
             menu.draw(g);
         }
+        else if (Gamestate.state == Gamestate.DEAD){
+            over.draw(g);
         }
+    }
 
     
     

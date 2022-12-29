@@ -16,6 +16,7 @@ public class MouseManager implements MouseListener {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 	       // TODO Auto-generated method stub
+		if (Gamestate.state == Gamestate.MENU){
 		   int mx = e.getX();
 		   int my = e.getY();
 		   if(mx>= panel.returnWidth()/2 - panel.returnWidth()/8  && mx <= panel.returnWidth()+100){
@@ -30,6 +31,7 @@ public class MouseManager implements MouseListener {
 				System.exit(1);
 			}
 		}
+	}
    
 	}
 	@Override
