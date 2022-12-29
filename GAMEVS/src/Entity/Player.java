@@ -161,6 +161,15 @@ public class Player {
     public int getPlayerY (){
         return y;
     }
+
+    public void setX(int x) {
+        this.x = x;
+        hurtbox.x = x + width/4 + width/8;
+    }
+    public void setY(int y) {
+        this.y = y;
+        hurtbox.y = y + width/4 + width/8;
+    }
     
     public static Rectangle getHurtBox (){
         return hurtbox;

@@ -115,7 +115,10 @@ public class Panel extends JPanel {
     public void reset(){
         setSecond(0);
         player.setHP(5);
+        player.setX(this.getWidth()/2-tilesize);
+        player.setY(this.getHeight()/2-tilesize);
         spawn.resetEnemy();
+
         Gamestate.state = Gamestate.PLAYING;
     }
 }

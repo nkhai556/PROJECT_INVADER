@@ -72,8 +72,8 @@ public class EnemyManager {
         this.player = player;
     }
     public void resetEnemy(){
-        for (int i = 0; i < enemies.size(); i++) {
-            tempEnemy = enemies.get(i);
+        while (enemies.size()>0) {
+            tempEnemy = enemies.get(0);
             removeEnemies(tempEnemy);    
         }
     }
