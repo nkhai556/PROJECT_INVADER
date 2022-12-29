@@ -108,5 +108,15 @@ public class Panel extends JPanel {
     public static int getSecond() {
         return second;
     }
+    public static void setSecond(int second) {
+        Panel.second = second;
+    }
+
+    public void reset(){
+        setSecond(0);
+        player.setHP(5);
+        spawn.resetEnemy();
+        Gamestate.state = Gamestate.PLAYING;
+    }
 }
 

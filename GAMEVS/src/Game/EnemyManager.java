@@ -71,5 +71,11 @@ public class EnemyManager {
     public void setPlayerInfo(Player player){
         this.player = player;
     }
+    public void resetEnemy(){
+        for (int i = 0; i < enemies.size(); i++) {
+            tempEnemy = enemies.get(i);
+            removeEnemies(tempEnemy);    
+        }
+    }
 }
 
