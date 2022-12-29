@@ -23,7 +23,7 @@ public class EnemyManager {
     }
 
     public void update() {
-        if (rand.nextInt((250 - 0) + 1) + 0 <= 2) {
+        if (rand.nextInt((100 - 0) + 1) + 0 <= 2) {
             addEnemies();
 
         }

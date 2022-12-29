@@ -16,6 +16,16 @@ public class MouseManager implements MouseListener {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 	       // TODO Auto-generated method stub
+		if (Gamestate.state == Gamestate.DEAD){
+			int mx = e.getX();
+			int my = e.getY();
+			if(mx>= panel.returnWidth()/2 - panel.returnWidth()/8  && mx <= panel.returnWidth()+100){
+				//new Rectangle(Panel.WIDTH/2+120,150,100,50);
+				if(my >= 150  &&  my<=200){
+					Gamestate.state = Gamestate.PLAYING;
+				}
+			}
+		}
 		if (Gamestate.state == Gamestate.MENU){
 		   int mx = e.getX();
 		   int my = e.getY();
