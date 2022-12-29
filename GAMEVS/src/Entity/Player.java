@@ -165,4 +165,7 @@ public class Player {
     public static Rectangle getHurtBox (){
         return hurtbox;
     }
+    public static int getHP() {
+        return HP;
+    }
 }

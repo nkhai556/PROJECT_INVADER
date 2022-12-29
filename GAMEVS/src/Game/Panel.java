@@ -25,6 +25,7 @@ public class Panel extends JPanel {
     private Menu menu;
     private Player player;
     private BG bg;
+    private UI ui;
     private EnemyManager spawn;
     private int tick = 0;
     static int second=0;
@@ -43,6 +44,7 @@ public class Panel extends JPanel {
         this.bg = new BG(this);
         this.spawn = new EnemyManager(this);
         this.player = new Player(this, Key, spawn);
+        this.ui = new UI(this);
         spawn.setPlayerInfo(player);
         
     }
@@ -80,6 +82,7 @@ public class Panel extends JPanel {
             bg.render(g);
             spawn.render(g);
             player.render(g);
+            ui.render(g);
         }
         else if (Gamestate.state == Gamestate.MENU ){
             menu.draw(g);
