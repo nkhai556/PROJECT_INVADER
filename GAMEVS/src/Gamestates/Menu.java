@@ -43,6 +43,7 @@ public class Menu implements Statemethod {
         g.drawString("Play", playButton.x +20, playButton.y+30);
         g2d.draw(quitButton);
         g.drawString("Quit", quitButton.x +20, quitButton.y+30);
+        g.drawString("WASD to move, J to shoot projectile", quitButton.x - 170, quitButton.y+100);
         
     }
 
