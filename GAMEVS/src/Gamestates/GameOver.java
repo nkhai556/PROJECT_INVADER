@@ -38,6 +38,8 @@ public class GameOver implements Statemethod {
         g.drawString("YOU HAD FALLEN", panel.returnWidth()/2 - panel.returnWidth()/3, panel.returnHeight()/2 -20);
         g.setFont(timeFont);
         g.drawString(String.format("You've survived for %d seconds...", time), panel.returnWidth()/4, panel.returnHeight()/2 + 20);
+        g.drawString(String.format("Try again?"), panel.returnWidth()/4+100, panel.returnHeight()/2 + 40);
+        
         g2d.draw(retryButton);
         g.drawString("Retry", retryButton.x +20, retryButton.y+30);
     }
